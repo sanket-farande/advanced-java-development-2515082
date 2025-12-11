@@ -1,14 +1,14 @@
 package _02_04.before;
 
-public class JacketItem extends ClothingItem {
+public class JacketItem implements ClothingItem {
 
     @Override
-    int getPrice() {
+    public int getPrice() {
         return 25;
     }
 
     @Override
-    String getName() {
+    public String getName() {
         return "Jacket";
     }
 }

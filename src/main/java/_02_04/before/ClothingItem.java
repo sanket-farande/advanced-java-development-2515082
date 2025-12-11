@@ -1,9 +1,9 @@
 package _02_04.before;
 
-public abstract class ClothingItem {
+public interface ClothingItem {
 
-    abstract int getPrice();
+    int getPrice();
 
-    abstract String getName();
+    String getName();
 
 }
