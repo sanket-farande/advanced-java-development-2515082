@@ -12,7 +12,7 @@ public class HashmapExample {
         // update value for existing key
         map.put("apple", 3);
 
-        // set default 1 if not present, and increment by 1 if present
+        // set default 1 if not present, and increment by old+new 1(new) if present
         map.merge("apple",1,Integer::sum);
         System.out.println(map.get("apple"));
 
