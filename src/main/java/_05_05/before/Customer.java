@@ -9,8 +9,13 @@ public class Customer {
         ATM atm = new ATM();
         BankAccount account = new BankAccount();
 
-        ExecutorService executorService = Executors.newFixedThreadPool(2);
+        ExecutorService executorService = Executors.newFixedThreadPool(6);
 
+        // same acount multiple transactions, wihthout synchronization this can lead to inconsistent state
+        executorService.submit(() -> atm.withdraw(account, 100));
+        executorService.submit(() -> atm.withdraw(account, 100));
+        executorService.submit(() -> atm.withdraw(account, 100));
+        executorService.submit(() -> atm.withdraw(account, 100));
         executorService.submit(() -> atm.withdraw(account, 100));
         executorService.submit(() -> atm.withdraw(account, 100));
 
