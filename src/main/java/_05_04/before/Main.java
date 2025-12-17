@@ -8,13 +8,12 @@ import java.util.concurrent.Executors;
 public class Main {
 
     public static void main(String[] args) {
-
+        // Executor service takes care of configuring and managing threads
         ExecutorService executorService = Executors.newFixedThreadPool(2);
-        executorService.submit(new _05_04.before.RunnableExample());
-        executorService.submit(() -> System.out.println("Hello world from a runnable running in an ExecutorService"));
+        executorService.submit(new RunnableExample());
+        executorService.submit(() -> System.out.println("Runnable from lambda"));
 
         executorService.shutdown();
-
     }
 
 }
